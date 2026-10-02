@@ -1,0 +1,26 @@
+name: assess-asset-health
+description: Assess the health state of an industrial asset from sensor readings and maintenance context.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    asset_id:
+      type: string
+    readings:
+      type: object
+      additionalProperties:
+        type: number
+    operating_hours:
+      type: number
+      minimum: 0
+  required:
+    - asset_id
+    - readings
+implementation:
+  type: script
+  path: assess_asset_health.py
+  runtime: python3
+  timeout: 30
+annotations:
+  read_only: true
+  requires_confirmation: false

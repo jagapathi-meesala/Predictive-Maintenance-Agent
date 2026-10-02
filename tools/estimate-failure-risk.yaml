@@ -1,0 +1,23 @@
+name: estimate-failure-risk
+description: Estimate equipment failure risk from operational sensor features and maintenance history.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    asset_id:
+      type: string
+    features:
+      type: object
+      additionalProperties:
+        type: number
+  required:
+    - asset_id
+    - features
+implementation:
+  type: script
+  path: estimate_failure_risk.py
+  runtime: python3
+  timeout: 30
+annotations:
+  read_only: true
+  requires_confirmation: false

@@ -36,7 +36,7 @@ def audit():
         if not re.fullmatch(r"[a-z][a-z0-9-]*", manifest.get("name","")): errors.append("invalid agent name")
         if not re.fullmatch(r"\d+\.\d+\.\d+", str(manifest.get("version",""))): errors.append("invalid semantic version")
         for skill in manifest.get("skills",[]):
-            if not (ROOT/"skills"/f"{skill}.md").is_file(): errors.append(f"missing declared skill: {skill}")
+            if not (ROOT/"skills"/skill/"SKILL.md").is_file(): errors.append(f"missing declared skill: {skill}")
         for tool in manifest.get("tools",[]):
             if not (ROOT/"tools"/f"{tool.replace('-','_')}.py").is_file(): errors.append(f"missing declared tool: {tool}")
     except Exception as exc: errors.append(f"manifest parse failure: {exc}")

@@ -1,0 +1,23 @@
+name: detect-sensor-anomalies
+description: Detect statistical anomalies in numerical sensor readings.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    sensor_name:
+      type: string
+    readings:
+      type: array
+      items:
+        type: number
+  required:
+    - sensor_name
+    - readings
+implementation:
+  type: script
+  path: detect_sensor_anomalies.py
+  runtime: python3
+  timeout: 30
+annotations:
+  read_only: true
+  requires_confirmation: false
