@@ -1,0 +1,12 @@
+spec_version: "0.1.0"
+name: predictive-maintenance-agent
+version: 1.0.0
+description: A framework-independent agent for equipment health assessment, failure-risk estimation, anomaly detection, and maintenance planning.
+skills:
+  - predictive-maintenance
+  - asset-health-assessment
+  - failure-risk-analysis
+tools:
+  - assess-asset-health
+  - estimate-failure-risk
+  - detect-sensor-anomalies
